@@ -1,0 +1,108 @@
+# NuGet packages
+*.nupkg
+*.snupkg
+**/packages/*
+
+# Include packages directory for maintaining NuGet packages used in the project
+!packages/
+
+# Ignore all files in the build output
+bin/
+obj/
+
+# Ignore the file containing sensitive user information
+usersecrets/
+
+# Ignore temporary files
+*.temp
+*.tmp
+*.log
+*.vspscc
+*.vssscc
+
+# Ignore Visual Studio specific files
+.vscode/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore folders for Visual Studio Code
+.vscode/
+
+# Ignore Rider specific files
+.idea/
+
+# Ignore build directories
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+
+# Ignore Rider workspace files
+.idea/
+
+# Ignore auto-generated folders
+.vscode/
+_ReSharper.Caches/
+
+# Ignore test results
+TestResults/
+
+# Ignore SDK generated files
+ProjectName/bin/
+ProjectName/obj/
+
+# Ignore other files that you don't want to commit
+*.pdb
+*.cache
+*.ilk
+*.aps
+*.sdf
+*.ipch
+*.tlog
+*.log
+*.vspscc
+*.vssscc
+*.nupkg
+*.snupkg
+.project
+.idea/
+*.swp
+*.bak
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+
+# Ignore database files
+*.mdf
+*.ldf
+
+# Ignore Web publish folder
+publish/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# NPM Packages
+node_modules/
+
+# dotenv environment variable files
+.env
+.env.*.local
+
+# Local history for Rider
+.localhistory/
+
+# Local History for Visual Studio Code
+.history/
