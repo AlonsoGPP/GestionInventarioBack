@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionInventario.Infrastructure", "GestionInventario.Infrastructure\GestionInventario.Infrastructure.csproj", "{58C109D6-B7D0-4F7B-9C97-D652BEA22633}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestionInventario.Infrastructure", "GestionInventario.Infrastructure\GestionInventario.Infrastructure.csproj", "{58C109D6-B7D0-4F7B-9C97-D652BEA22633}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{597D6224-40E5-4C8B-91B4-01EE9F57FFE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{7D4262D4-E21F-411D-BFD9-A4FE9D231D72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9F00D639-0147-4ABE-92CD-6E6183E2C308}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{3171C98A-89D8-4D36-82EA-7312226DC74F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestionInventario.Domain", "GestionInventario.Domain\GestionInventario.Domain.csproj", "{83B19FDF-238B-4830-860C-1C8C7678D717}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestionInventario.Application", "GestionInventario.Application\GestionInventario.Application.csproj", "{C3617E7C-34D3-4BD2-AD38-A3D310F59737}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionInventario.API", "GestionInventario.API\GestionInventario.API.csproj", "{6AE5910B-C066-4F36-9DD9-9210084CE260}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +29,30 @@ Global
 		{58C109D6-B7D0-4F7B-9C97-D652BEA22633}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58C109D6-B7D0-4F7B-9C97-D652BEA22633}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58C109D6-B7D0-4F7B-9C97-D652BEA22633}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83B19FDF-238B-4830-860C-1C8C7678D717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83B19FDF-238B-4830-860C-1C8C7678D717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83B19FDF-238B-4830-860C-1C8C7678D717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83B19FDF-238B-4830-860C-1C8C7678D717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3617E7C-34D3-4BD2-AD38-A3D310F59737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3617E7C-34D3-4BD2-AD38-A3D310F59737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3617E7C-34D3-4BD2-AD38-A3D310F59737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3617E7C-34D3-4BD2-AD38-A3D310F59737}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AE5910B-C066-4F36-9DD9-9210084CE260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AE5910B-C066-4F36-9DD9-9210084CE260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AE5910B-C066-4F36-9DD9-9210084CE260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AE5910B-C066-4F36-9DD9-9210084CE260}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{58C109D6-B7D0-4F7B-9C97-D652BEA22633} = {3171C98A-89D8-4D36-82EA-7312226DC74F}
+		{7D4262D4-E21F-411D-BFD9-A4FE9D231D72} = {597D6224-40E5-4C8B-91B4-01EE9F57FFE1}
+		{9F00D639-0147-4ABE-92CD-6E6183E2C308} = {597D6224-40E5-4C8B-91B4-01EE9F57FFE1}
+		{3171C98A-89D8-4D36-82EA-7312226DC74F} = {597D6224-40E5-4C8B-91B4-01EE9F57FFE1}
+		{83B19FDF-238B-4830-860C-1C8C7678D717} = {9F00D639-0147-4ABE-92CD-6E6183E2C308}
+		{C3617E7C-34D3-4BD2-AD38-A3D310F59737} = {9F00D639-0147-4ABE-92CD-6E6183E2C308}
+		{6AE5910B-C066-4F36-9DD9-9210084CE260} = {7D4262D4-E21F-411D-BFD9-A4FE9D231D72}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8A3B810C-E762-4ED9-ADCC-20E619E41B18}

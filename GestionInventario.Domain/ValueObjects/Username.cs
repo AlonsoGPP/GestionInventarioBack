@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionInventario.Domain.ValueObjects
 {
-    public record Username
+    public sealed class Username
     {
         public string Value { get; }
 
@@ -15,22 +15,31 @@ namespace GestionInventario.Domain.ValueObjects
             Value = value;
         }
 
-        public static Username Create(string username)
+        public static Username Create(string value)
         {
-            if (string.IsNullOrWhiteSpace(username))
-                throw new ArgumentException("Username cannot be null or empty");
+            if (string.IsNullOrWhiteSpace(value))
+                throw new ArgumentException("Username cannot be empty");
 
-            if (username.Length < 3)
-                throw new ArgumentException("Username must be at least 3 characters long");
+            value = value.Trim();
 
-            if (username.Length > 50)
-                throw new ArgumentException("Username cannot exceed 50 characters");
+            if (value.Length < 3)
+                throw new ArgumentException("Username must have at least 3 characters");
 
-            return new Username(username.Trim());
+            if (value.Length > 20)
+                throw new ArgumentException("Username cannot exceed 20 characters");
+
+            if (value.Contains(" "))
+                throw new ArgumentException("Username cannot contain spaces");
+
+            return new Username(value);
         }
 
         public override string ToString() => Value;
 
-        public static implicit operator string(Username username) => username.Value;
+        public override bool Equals(object obj) =>
+            obj is Username other && Value.Equals(other.Value, StringComparison.OrdinalIgnoreCase);
+
+        public override int GetHashCode() =>
+            Value.ToLowerInvariant().GetHashCode();
     }
 }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace GestionInventario.Domain.Enums
 {
-    internal class UserRole
+    public enum UserRole
     {
+        Administrator = 1,
+        Employee = 2
     }
 }
