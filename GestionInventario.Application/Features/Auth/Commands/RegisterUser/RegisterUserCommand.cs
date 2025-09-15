@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionInventario.Application.Features.Auth.Commands
+namespace GestionInventario.Application.Features.Auth.Commands.RegisterUser
 {
     public class RegisterUserCommand : IRequest<ResponseBase>
     {
         public string Username { get; set; } = null!;
         public string Email { get; set; } = null!;
-        public string Password { get; set; } = null!; 
+        public string Password { get; set; } = null!;
         public UserRole Role { get; set; } = UserRole.Employee;
     }
 }

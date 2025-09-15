@@ -4,23 +4,26 @@ using GestionInventario.Application.Util;
 using GestionInventario.Domain.DTOs.Base;
 using GestionInventario.Domain.Entities;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionInventario.Application.Features.Auth.Commands
+namespace GestionInventario.Application.Features.Auth.Commands.RegisterUser
 {
     public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, ResponseBase>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IPasswordHasher _passwordHasher;
+        private readonly ILogger<RegisterUserCommandHandler> _logger;
 
-        public RegisterUserCommandHandler(IUnitOfWork unitOfWork, IPasswordHasher passwordHasher)
+        public RegisterUserCommandHandler(IUnitOfWork unitOfWork, IPasswordHasher passwordHasher, ILogger<RegisterUserCommandHandler> logger)
         {
             _unitOfWork = unitOfWork;
             _passwordHasher = passwordHasher;
+            _logger = logger;
         }
 
         public async Task<ResponseBase> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
@@ -56,6 +59,7 @@ namespace GestionInventario.Application.Features.Auth.Commands
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, ex.Message);
                 return ResponseUtil.InternalError($"Error al registrar usuario: {ex.Message}");
             }
         }

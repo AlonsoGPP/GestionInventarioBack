@@ -19,6 +19,7 @@ namespace GestionInventario.Infrastructure.IoC
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(dbConnection));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IPasswordHasher, PasswordHasher>();
+            services.AddScoped<IJwtGenerator, JwtGenerator>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             //repositories personalizados aqui
 

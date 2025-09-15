@@ -42,7 +42,7 @@ namespace GestionInventario.Domain.Entities
             return new Product(name, description, voPrice, voQuantity, categoryId);
         }
 
-        public void UpdateDetails(string name, string? description, decimal price, Guid categoryId)
+        public void UpdateDetails(string name, string? description, decimal price, Guid categoryId, int quantity)
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("El nombre no puede estar vacío");
@@ -50,17 +50,8 @@ namespace GestionInventario.Domain.Entities
             Name = name.Trim();
             Description = description?.Trim();
             Price = new Price(price);
+            Quantity = new StockQuantity(quantity);
             CategoryId = categoryId;
-            UpdatedAt = DateTime.UtcNow;
-        }
-
-        public void AdjustStock(int quantity)
-        {
-            if (quantity > 0)
-                Quantity.Increase(quantity);
-            else if (quantity < 0)
-                Quantity.Decrease(Math.Abs(quantity));
-
             UpdatedAt = DateTime.UtcNow;
         }
 
